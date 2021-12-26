@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="style_w13_hw.css" rel="stylesheet">
+	<title></title>
+</head>
+
+<body>
+	<div id="wrapper">
+	<form>
+		<h1>Guessing Game</h1>
+		<label>Your Guess(1~100)</p>
+			<input id="num" name="num" type="text"> 
+	</label></p>
+	<input type ="button" id = "play" onclick="check()" value ="play"></p>
+  	</form>
+  	
+  	<table id = "result">
+  		<tr>	
+  			<th>Result:</th>
+  		</tr>
+
+  	</table>
+  	
+  	
+  	
+  </div>
+
+	<script>
+		var number= Math.floor(Math.random()*100+1);
+		var big = 100;
+		var small = 1;
+
+		
+
+		function check(){
+		  var input = document.getElementById('num').value;
+		  if(number>input){
+		    small = input;
+		    output();
+		  }else if(number<input){
+		    big = input;
+		    output();
+		  }else if (number == input){
+		  	alert('boom!');
+		    }
+		}
+
+		  function output(){
+		  	var n=document.createElement('div');
+		  	var t=document.createTextNode(small+"~"+big);
+		  	n.appendChild(t);
+		  	
+		  	document.getElementById('result').appendChild(n);
+
+		  }
+		  
+		  
+		
+	
+
+
+
+	</script>	
+</body>
+</html>
